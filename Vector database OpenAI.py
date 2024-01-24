@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 # Set openai.api_key to the OPENAI environment variable
 openai.api_key = os.environ["OPENAI"]
 openai.api_type = os.environ["OPENAI_API_TYPE"]
