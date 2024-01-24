@@ -1,11 +1,38 @@
-# Import librairies
-from langchain.vectorstores.faiss import FAISS
-from langchain.embeddings import HuggingFaceEmbeddings
-import pandas as pd
-import fastparquet as fp
+from bardapi import Bard
+import os
+os.environ["_BARD_API_KEY"] = "AIzaSyCTicUvMkRp6OhCE8FIgcVdXGIwqPcIgy0"
+
+question = "What is google ?"
+
+Bard.get_answer(question)
+
 
 # Load data from the parquet file
 dataframe = pd.read_parquet('data/default_train_0000.parquet', engine='fastparquet')[["sentence_A", "sentence_B", "relatedness_score"]]
+
+import google_bard
+
+
+# Replace "YOUR_API_KEY" with the actual API Key obtained earlier
+API_KEY = "AIzaSyCTicUvMkRp6OhCE8FIgcVdXGIwqPcIgy0"
+
+
+query = "What is the meaning of life?"
+response = google_bard.generate_text(query, api_key=API_KEY)
+
+print(response)
+
+
+
+
+
+
+
+
+
+# Chargez le modèle Jurassic-1 Jumbo
+model = transformers.AutoModelForSequenceClassification.from_pretrained("google/jurassic-1-jumbo")
+
 
 
 
