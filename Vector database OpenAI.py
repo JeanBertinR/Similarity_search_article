@@ -32,7 +32,7 @@ for row_number in range(24):
 
 
 system_msg = '''You are a helpful assistant who helps retrieve similarity scores between two sentences.
-You can find here some examples of correlation:
+You will find below some examples to help you determine this similarity score with the best accuracy :
 ''' + train_strings
 
 
@@ -56,11 +56,15 @@ for row_number in range(len(df_test)):
                                             temperature = 0,
                                             messages=[{"role": "system", "content": system_msg}, {"role": "user", "content": user_msg}])
 
-    # Retrieve similarity score
-    final_score = response["choices"][0]["message"]["content"].split(":")[1].strip()
+    try:
+        # Retrieve similarity score
+        final_score = response["choices"][0]["message"]["content"].split(":")[1].strip()
 
-    # Store the similarity score in the DataFrame
-    df_test.loc[row_number, "model_score"] = final_score
+        # Store the similarity score in the DataFrame
+        df_test.loc[row_number, "model_score"] = final_score
+
+    except Exception as e:
+        print(f"An unexpected error occurred : {e}")
 
 # Convertir la colonne 'model_score' en type float
 df_test['model_score'] = df_test['model_score'].astype(float)
