@@ -21,19 +21,19 @@ df_test = pd.read_parquet('data/biosses_test_0000.parquet', engine='fastparquet'
 df_test["model_score"] = None
 
 # Build the prompt with examples from the train file
-train_strings = ""
+train_examples = ""
 #for row_number in range(len(df_train)):
 for row_number in range(24):
 
     # Get the row at the current index
     row = df_train.loc[row_number]
     chain = 'The sentence "' + row["sentence1"] +  '" and the sentence "' + row["sentence1"] + '" have a similarity score of  ' + row["score"].astype(str)
-    train_strings += chain + "\n"
+    train_examples += chain + "\n"
 
 
 system_msg = '''You are a helpful assistant who helps retrieve similarity scores between two sentences.
 You will find below some examples to help you determine this similarity score with the best accuracy :
-''' + train_strings
+''' + train_examples
 
 
 print(system_msg)
@@ -46,9 +46,9 @@ for row_number in range(len(df_test)):
     print("Processing: ",row_number)
 
     # Define the user message
-    user_msg = 'Pleae give me the similarity score from 0 to 4 between those sentences : "' + row["sentence1"] +  '" and "' + \
+    user_msg = 'Please give me the similarity score from 0 to 4 between those sentences : "' + row["sentence1"] +  '" and "' + \
                row["sentence2"] + \
-               '". Always respond using stricly and only the following format : Similarity_score : XXX "'
+               '". Always respond using strictly and only the following format : Similarity_score : XXX "'
 
     print(user_msg)
     response = openai.ChatCompletion.create(model="gpt-3.5-turbo",
