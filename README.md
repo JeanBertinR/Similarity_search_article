@@ -7,7 +7,7 @@ This repository contains the code and data for the research article "Advancing S
 ## Files
 
 - **Similarity search RAG approach.ipynb**: Jupyter Notebook containing the Python code used for the research.
-- **BIOSSES_dataset.csv**: CSV file containing the BIOSSES dataset used in the study.
+- **biosses_.parquet**: parquet files containing the BIOSSES train, test an validation dataset used in the study.
 - **requirements.txt**: package version list used for the study
 
 ## Usage
