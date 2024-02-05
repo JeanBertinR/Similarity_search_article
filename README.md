@@ -6,19 +6,19 @@ This repository contains the code and data for the research article "Advancing S
 
 ## Files
 
-- **article.tex**: LaTeX source code for the research article.
 - **code.ipynb**: Jupyter Notebook containing the Python code used for the research.
 - **BIOSSES_dataset.csv**: CSV file containing the BIOSSES dataset used in the study.
+- **requirements.txt**: package version list used for the study
 
 ## Usage
 
 ### LaTeX Article
 
-The LaTeX article source code is available in the `article.tex` file. You can compile it using your preferred LaTeX editor to generate the research article document.
+The LaTeX article source code is available on ArXiv. 
 
 ### Jupyter Notebook
 
-The Jupyter Notebook `code.ipynb` contains the Python code used for the research. You can open it in a Jupyter environment and run the code cells to reproduce the results.
+The Jupyter Notebook `Similarity search RAG approach.ipynb` contains the Python code used for the research. You can open it in a Jupyter environment and run the code cells to reproduce the results.
 
 ### BIOSSES Dataset
 
@@ -26,7 +26,7 @@ The `BIOSSES_dataset.csv` file contains the BIOSSES dataset used in the study. I
 
 ## Note
 
-The Jupyter Notebook and the BIOSSES dataset are available for public use. If you have any questions or need further assistance, feel free to contact Jean Bertin at jean.bertin@mines-paris.org.
+The Jupyter Notebook and the BIOSSES dataset are available for public use. If you have any questions or need further assistance, feel free to contact me at jean.bertin@mines-paris.org.
 
 Enjoy exploring the research findings!
 
