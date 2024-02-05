@@ -6,7 +6,7 @@ This repository contains the code and data for the research article "Advancing S
 
 ## Files
 
-- **code.ipynb**: Jupyter Notebook containing the Python code used for the research.
+- **Similarity search RAG approach.ipynb**: Jupyter Notebook containing the Python code used for the research.
 - **BIOSSES_dataset.csv**: CSV file containing the BIOSSES dataset used in the study.
 - **requirements.txt**: package version list used for the study
 
